@@ -1,0 +1,45 @@
+Bootstrap: docker
+From: nvidia/cuda:11.6.2-cudnn8-devel-ubuntu20.04
+
+%environment
+    export PATH=/anaconda/bin:$PATH
+
+    export PROJ_ROOT="/mnt/project"
+    export PYTHONPATH=$PROJ_ROOT
+
+    export NVIDIA_VISIBLE_DEVICES=0
+    export CUDA_VISIBLE_DEVICES=0
+
+%files
+    ./ /opt/scripts
+
+%post
+
+    apt update -y
+
+    apt dist-upgrade -y
+
+    apt install wget -y
+    apt install bzip2 -y
+
+    wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.11.0-Linux-x86_64.sh -O anaconda.sh
+
+    bash anaconda.sh -b -p /anaconda
+
+    rm anaconda.sh
+
+    . /anaconda/bin/activate
+
+    conda update conda
+    conda update --all
+
+    conda env update --name base --file /opt/scripts/environment.yml
+
+%runscript
+
+    cd ${PROJ_ROOT} || exit
+
+    echo "GPU: $CUDA_VISIBLE_DEVICES"
+
+    python "$@"
+

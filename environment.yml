@@ -1,0 +1,14 @@
+name:
+  - loop NN with all data point 
+dependencies:
+  - cudatoolkit=11.0
+  - conda-forge::cudnn
+  - numpy
+  - scipy
+  - matplotlib=3.4
+  - pandas
+  - tensorflow 
+  - conda-forge::scikit-learn
+  - conda-forge::jupyterlab
+  - dask 
+  - keras-tuner
