@@ -3,6 +3,8 @@
 
 ###### Some Initial code base has been shared for experimental purpose. Main code base follows a cleaner version with a framework structure will not be published for organizational restrictions. 
 
+## Branches 1. main 2. master 3. s3_logfile_data
+
 
 
 
