@@ -3,7 +3,7 @@
 ### ADAPT TO YOUR PREFERRED SLURM OPTIONS ###
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=asif.abdullah.rokoni@hhi.fraunhofer.de
-#SBATCH --job-name="NN_loop"
+#SBATCH --job-name="NN_all"
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=4
 #SBATCH --partition=gpu

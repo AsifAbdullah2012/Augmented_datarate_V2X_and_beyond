@@ -629,6 +629,7 @@ if __name__ == '__main__':
         lis_predicted_data_rate_corrected_hi.append(datarate_w_cqr_hi[1])
         lis_empirical_quantile_after_correction_lo.append(over_predicted_percentage_w_cqr_lo)
         lis_empirical_quantile_after_correction_hi.append(over_predicted_percentage_w_cqr_hi)
+        print('XXX 1 Run fininshed -------------------------------------------------------------> workingg !!!!')
 
     df_for_neural_network['index'] = lis_idx
     df_for_neural_network['train_size'] = lis_train_siz
@@ -641,7 +642,7 @@ if __name__ == '__main__':
     df_for_neural_network['lis_predicted_data_rate_corrected_hi'] = lis_predicted_data_rate_corrected_hi
     df_for_neural_network['lis_empirical_quantile_after_correction_lo'] = lis_empirical_quantile_after_correction_lo
     df_for_neural_network['lis_empirical_quantile_after_correction_hi'] = lis_empirical_quantile_after_correction_hi
-    name = 'multiple_run_on_samedata_point' + '_all' + '_NN_q_.20.csv'
+    name = 'ALL_multiple_run_on_samedata_point' + '_all' + '_NN_q_.20.csv'
     df_for_neural_network.to_csv(name,index=False)
 
 
